@@ -2,8 +2,8 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    @user = User.create(name: "fest", email: "fest@scripbox.com", 
-      password: "fest", password_confirmation:"fest")
+    @user = User.new(name: "nest", email: "nest@scripbox.com", 
+      password: "nest", password_confirmation:"nest")
   end
 
   test "should be valid" do
