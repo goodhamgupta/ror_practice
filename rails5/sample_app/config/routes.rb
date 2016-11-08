@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get  '/contact', to: 'static_pages#contact'
   # Changing users new to users signup url
   get '/signup', to: 'users#new'
+  # Adds RESTful endpoints for User model
+  resources :users
 end
