@@ -9,4 +9,11 @@ class User < ApplicationRecord
   # Virtual fields password and passsword_confirmation added.
   # Forces validation on the above attributes automatically.
   has_secure_password
+
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                  BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
+  
 end
