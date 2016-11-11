@@ -17,5 +17,14 @@ module SessionsHelper
         redirect_to login_url
       end
   end
+
+  def redirect_back_or(default)
+    redirect_to(session[:return_to] || default)
+    session.delete(:return_to)
+  end 
+
+  def current_user?(user)
+    user == current_user
+  end
   
 end
