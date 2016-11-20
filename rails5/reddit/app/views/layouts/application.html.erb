@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reddit</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <% if user_signed_in? %>
+     <ul>
+       <li><%= link_to "Submit Link", new_link_path %></li>
+       <li><%= link_to "Account", edit_user_registration_path %></li>
+       <li><%= link_to "Signout", destroy_user_session_path, method: :delete %></li>
+     </ul>
+    <% else %>
+      <%= link_to "Sign Up", new_user_registration_path %>
+      <%= link_to "Sign In", new_user_session_path %>
+  <% end %>   
+  <body>
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
+    <%= yield %>
+  </body>
+</html>

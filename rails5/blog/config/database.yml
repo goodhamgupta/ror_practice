@@ -1,0 +1,49 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: blog
+  pool: 5
+  username: root
+  password:
+  socket: /tmp/mysql.sock
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: test
+  pool: 5
+  username: root
+  password:
+  socket: /tmp/mysql.sock
+
+# production:
+#   adapter: mysql2
+#   encoding: utf8
+#   reconnect: false
+#   database: test
+#   pool: 5
+#   username: scripbox
+#   password:
+#   host:
+
+# staging:
+#   adapter: mysql2
+#   encoding: utf8
+#   reconnect: false
+#   database: test
+#   pool: 5
+#   username: root
+#   password:
+#   socket: /var/run/mysqld/mysqld.sock
+
+# uat:
+#   adapter: mysql2
+#   encoding: utf8
+#   reconnect: false
+#   database: test
+#   pool: 5
+#   username: root
+#   password:
+#   socket: /var/run/mysqld/mysqld.sock
